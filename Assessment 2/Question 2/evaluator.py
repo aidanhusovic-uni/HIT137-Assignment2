@@ -35,7 +35,7 @@ def token(text): # Convert the string of text into a list of tokens.
                 while i < len(text) and text[i].isdigit():
                     i += 1
 
-            num_text = text[start:i] # Takes the string betweeen the start and end of the number token and assigns it to a variable.
+            num_text = text[start:i] # Takes the string between the start and end of the number token and assigns it to a variable.
             tokens.append(("NUM", num_text, float(num_text)))
             continue
 
@@ -114,7 +114,7 @@ def parse_primary(state): # Parse numbers and parenthesised expressions.
 def parse_power(state): # Exponents are evaluated left to right.
     left = parse_primary(state)
 
-    if current(state)[0] == "OP" and current(state)[1] == "^": # If the current token is an operator and the operator is in the 1st postition, then it is an exponentiation. Advance the token and parse the next as the right digit of the exponentiation.
+    if current(state)[0] == "OP" and current(state)[1] == "^": # If the current token is an operator and the operator is in the 1st position, then it is an exponentiation. Advance the token and parse the next as the right digit of the exponentiation.
         advance_token(state)
         right = parse_unary(state)
         return ("bin", "^", left, right) # Return a tuple representing the exponentiation operation, with the left digit, operator, and right digit.
