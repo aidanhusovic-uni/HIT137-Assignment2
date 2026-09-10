@@ -12,41 +12,45 @@ file_path2 = project_path / 'decryption_text.txt' #the decryption_text.txt file 
 
 
 
+
 for attempt in range (5): #to prompt the user to enter correct inputs that are an int not anything else
 
     try:                  #to try this and give a value error if inccorect (not a number) and then prompt the user to try again until they get it right or run out of attempts
           
-          shift_num1 = int (input (f'You have 5 attempts, this is {attempt + 1}/5 enter a valid number :'))
+          shift_num1 = int (input (f'You have 5 attempts, this is {attempt + 1}/5 enter a valid number for shift value 1 :\n'))
 
           break #if (true) and the value is correct
     
     except ValueError:
           
           print ('That is not a valid number, please try again !')
+else : 
 
-else:
-    (f' You failed to enter a valid number 5 times, please try again later') 
+      print ('All attempts used up please try again later !')
 
-exit()
+      exit ()
+            
+
+
 
 for attempt in range (5): #to prompt the user to enter correct inputs that are an int not anything else
 
     try:                  #to try this and give a value error if inccorect (not a number) and then prompt the user to try again until they get it right or run out of attempts
            
-          shift_num2 = int (input (f'You have 5 attempts, this is {attempt + 1}/5 enter a valid number :')) #to prompt the user to enter a valid number for the second shift
+          shift_num2 = int (input (f'You have 5 attempts, this is {attempt + 1}/5 enter a valid number for shift value 2 :\n')) #to prompt the user to enter a valid number for the second shift
           break #if (true) and the value is correct
     
     except ValueError:  #if the inputted value generates an error since the input is a int if a non digit is entered it will cause the error
           
           print ('That is not a valid number, please try again !')
 
-          if range == 5:
+else :
 
-               (f' You failed to enter a valid number 5 times, please try again later') 
+      print ('All attempts used up please try again later !')
 
-               exit ()
+      exit ()
 
- #if user runs out of possible attempts
+
 
 
         
